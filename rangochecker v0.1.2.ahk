@@ -37,7 +37,6 @@ if (current_version != new_version)
 		UrlDownloadToFile, https://raw.githubusercontent.com/forest38asd/rangochecker.ahk/master/rangochecker`%20v%new_version%.ahk, %new_file_name%
 		while not FileExist(new_file_name)
 		{
-			MsgBox, Не создался
 			sleep 2000
 		}
 		FileDelete, %A_ScriptName%
@@ -49,6 +48,14 @@ if (current_version != new_version)
 
 ;=================================================
 
+if not FileExist(SAMP.ahk)
+{
+	UrlDownloadToFile, https://raw.githubusercontent.com/forest38asd/rangochecker.ahk/master/SAMP.ahk, SAMP.ahk
+	while not FileExist(SAMP.ahk)
+	{
+		sleep 2000
+	}
+}
 
 #Include SAMP.ahk
 
