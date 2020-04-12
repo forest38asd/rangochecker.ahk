@@ -23,7 +23,8 @@ UrlDownloadToFile, https://raw.githubusercontent.com/forest38asd/rangochecker.ah
 FileReadLine, new_version, new_version.txt, 1
 FileDelete, new_version.txt
 
-if current_version != new_version
+exit
+if (current_version != new_version)
 {
 	UrlDownloadToFile, https://raw.githubusercontent.com/forest38asd/rangochecker.ahk/master/changelog/%new_version%.txt, changes.txt
 	FileRead, changes, changes.txt
