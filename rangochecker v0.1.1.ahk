@@ -40,7 +40,8 @@ if current_version != new_version
 		}
 		FileDelete, %A_ScriptName%
 		FileMove, %new_file_name%, %A_ScriptName%
-		reload
+		Run, %A_ScriptName%
+		exit
 	}
 }
 
