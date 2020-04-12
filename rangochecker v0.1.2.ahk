@@ -1,4 +1,6 @@
-﻿if not A_IsAdmin
+﻿#SingleInstance force
+
+if not A_IsAdmin
 {
    Run *RunAs "%A_ScriptFullPath%"  ; Requires v1.0.92.01+
    ExitApp
@@ -8,7 +10,7 @@
 ;====================== INFO =====================
 ;=================================================
 ; Создатель - Bogdan_Forest
-current_version = 0.1.2
+current_version = 0.1.1
 ;=================================================
 
 
@@ -39,8 +41,8 @@ if current_version != new_version
 			sleep 2000
 		}
 		FileDelete, %A_ScriptName%
-		Run, %new_file_name%
 		FileMove, %new_file_name%, %A_ScriptName%
+		Run, %A_ScriptName%
 		exit
 	}
 }
